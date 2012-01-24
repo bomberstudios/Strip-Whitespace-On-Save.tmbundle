@@ -10,7 +10,7 @@
 perl -pe 's/[\t ]+$//g'
 </string>
 	<key>hideFromUser</key>
-	<string>true</string>
+	<true/>
 	<key>input</key>
 	<string>document</string>
 	<key>inputFormat</key>
@@ -28,6 +28,6 @@ perl -pe 's/[\t ]+$//g'
 	<key>uuid</key>
 	<string>FDFFAE3A-3303-4E26-953D-87214C480B00</string>
 	<key>version</key>
-	<string>2</string>
+	<integer>2</integer>
 </dict>
 </plist>
