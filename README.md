@@ -1,6 +1,6 @@
 # Strip Whitespace On Save
 
-TextMate 2 bundle: Strips trailing whitespace from current document when saving. Works nicely with my [Save When Focus Lost bundle](/bomberstudios/Autosave,tmbundle).
+TextMate 2 bundle: Strips trailing whitespace from current document when saving. Works nicely with my [Save When Focus Lost bundle](/bomberstudios/Autosave,tmbundle). If you need whitespace highlighting, check the superb [Whitespace bundle by Mads Hartmann](http://mads379.github.com/posts/whitespace-tmbundle).
 
 ## Installation
 
