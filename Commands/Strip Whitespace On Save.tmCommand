@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
-	<string>saveActiveFile</string>
+	<string>nop</string>
 	<key>command</key>
 	<string>#!/usr/bin/env bash
 
 perl -pe 's/[\t ]+$//g'
 </string>
 	<key>hideFromUser</key>
-	<true/>
+	<string>true</string>
 	<key>input</key>
 	<string>document</string>
 	<key>inputFormat</key>
@@ -18,13 +18,13 @@ perl -pe 's/[\t ]+$//g'
 	<key>name</key>
 	<string>Strip Whitespace On Save</string>
 	<key>outputCaret</key>
-	<string>interpolateByLine</string>
+	<string>heuristic</string>
 	<key>outputFormat</key>
 	<string>text</string>
 	<key>outputLocation</key>
 	<string>replaceDocument</string>
 	<key>semanticClass</key>
-	<string>callback.document.did-save</string>
+	<string>callback.document.will-save</string>
 	<key>uuid</key>
 	<string>FDFFAE3A-3303-4E26-953D-87214C480B00</string>
 	<key>version</key>
