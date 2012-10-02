@@ -18,7 +18,7 @@ perl -pe 's/[\t ]+$//g'
 	<key>name</key>
 	<string>Strip Whitespace On Save</string>
 	<key>outputCaret</key>
-	<string>heuristic</string>
+	<string>interpolateByLine</string>
 	<key>outputFormat</key>
 	<string>text</string>
 	<key>outputLocation</key>
