@@ -19,7 +19,7 @@ Just open the bundle editor (Bundles menu › Edit Bundles... or pressing Ctrl +
 
 If you need to exclude multiple file types, just add `(space)-scope.namespace`. For example, if you want to exclude CSV and YAML, you'd write: `-text.tabular.csv -source.yaml`.
 
-If you want the bundle to work only on specific file types, use the namespace only, without the minus sign (i.e: if you want to strip CSV files only, you'd write `text.tabular.csv`). If you need to include multiple file types just add them separated by spaces (i.e: `text.tabular.csv source.yaml text.html.markdown`).
+If you want the bundle to work only on specific file types, use the namespace only, without the minus sign (i.e: if you want to strip CSV files only, you'd write `text.tabular.csv`). If you need to include multiple file types just add them separated by comma (i.e: `text.tabular.csv, source.yaml, text.html.markdown`).
 
 If you want to know which scope corresponds to each language, just hit Ctrl + Shift + P ('Show Scope' command) on a document of that type, and you'll get a nice tooltip with the scope namespaces that apply at the current cursor's position.
 
