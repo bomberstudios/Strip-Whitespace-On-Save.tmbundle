@@ -9,20 +9,37 @@ TextMate 2 bundle: Strips trailing whitespace from current document when saving.
 
 ## Strip Whitespace on specific filetypes
 
-If you want the bundle to affect some filetypes only, it's easy.
+If you want to customize how the bundle works, it's easy.
 
-Say you want to avoid stripping white space on CSV files.
+Say you want to avoid stripping white space on some specific files (like CSV and YAML), just add the following to your `.tm_properties` file:
 
-Just open the bundle editor (Bundles menu › Edit Bundles... or pressing Ctrl + Alt + Command + B) and add `-text.tabular.csv` in the Scope Selector field of the command (see attached screenshot : )
+```
+[*.csv]
+scopeAttributes = attr.keep-whitespace
+
+[*.yml]
+scopeAttributes = attr.keep-whitespace
+```
+
+If you wanted to preserve whitespace for that messed-up whitespace project of yours, just drop this in its .tm_properties file:
+
+```
+scopeAttributes = attr.keep-whitespace
+```
+
+Of course, you can combine those two approaches for complete control over whitespace-stripping !
+
+If you want to know which scope corresponds to each language, just hit Ctrl + Shift + P ('Show Scope' command) on a document of that type, and you'll get a nice tooltip with the scope namespaces that apply at the current cursor's position.
+
+### Strip without using .tm_properties files
+
+In any case, if you can't (or don't want to) use `.tm_properties` files, you can just open the bundle editor (Bundles menu › Edit Bundles... or pressing Ctrl + Alt + Command + B) and add `-text.tabular.csv` in the Scope Selector field of the command (see attached screenshot : )
 
 ![screenshot 2013-12-05 20 35 46](https://f.cloud.github.com/assets/3832/1686305/20f9cb7e-5de5-11e3-8b76-1c09d9e40137.png)
 
 If you need to exclude multiple file types, just add `(space)-scope.namespace`. For example, if you want to exclude CSV and YAML, you'd write: `-text.tabular.csv -source.yaml`.
 
 If you want the bundle to work only on specific file types, use the namespace only, without the minus sign (i.e: if you want to strip CSV files only, you'd write `text.tabular.csv`). If you need to include multiple file types just add them separated by comma (i.e: `text.tabular.csv, source.yaml, text.html.markdown`).
-
-If you want to know which scope corresponds to each language, just hit Ctrl + Shift + P ('Show Scope' command) on a document of that type, and you'll get a nice tooltip with the scope namespaces that apply at the current cursor's position.
-
 
 ## Notes
 
