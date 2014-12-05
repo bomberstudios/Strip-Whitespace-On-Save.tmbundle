@@ -30,6 +30,8 @@
 	</array>
 	<key>name</key>
 	<string>Strip Whitespace on Save</string>
+	<key>scope</key>
+	<string>* - attr.keep-whitespace</string>
 	<key>semanticClass</key>
 	<string>callback.document.will-save</string>
 	<key>uuid</key>
