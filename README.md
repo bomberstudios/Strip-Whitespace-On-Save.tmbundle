@@ -1,19 +1,31 @@
 # Strip Whitespace On Save
 
-TextMate 2 bundle: Strips trailing whitespace from current document when saving. Works nicely with my [Save On Focus Lost bundle](https://github.com/bomberstudios/Save-On-Focus-Lost.tmbundle). If you need whitespace highlighting, check the superb [Whitespace bundle by Mads Hartmann](https://github.com/mads379/Whitespace.tmbundle). If you happen to need new lines at EOF, then check Mike Szyndel's [Ensure New Line at the EOF bundle](https://github.com/hajder/Ensure-New-Line-at-the-EOF.tmbundle), which is based on mine.
+**TextMate 2 bundle:** Strips trailing whitespace from current document when saving. Works nicely with my [Save On Focus Lost bundle][bomberstudios__Save-On-Focus-Lost.tmbundle]. 
+
+- If you need whitespace highlighting, check Mads Hartmann's superb [Whitespace bundle][mads379__Whitespace.tmbundle]. 
+- If you happen to need new lines at EOF, then check Mike Szyndel's [Ensure New Line at the EOF bundle][hajder__Ensure-New-Line-at-the-EOF.tmbundle], which is based on mine.
+
+[bomberstudios__Save-On-Focus-Lost.tmbundle]:  https://github.com/bomberstudios/Save-On-Focus-Lost.tmbundle
+[mads379__Whitespace.tmbundle]:                https://github.com/mads379/Whitespace.tmbundle
+[hajder__Ensure-New-Line-at-the-EOF.tmbundle]: https://github.com/hajder/Ensure-New-Line-at-the-EOF.tmbundle
+
 
 ## Installation
 
 - Clone the git repo to  `~/Library/Application Support/Avian/Bundles`
 - Relaunch TextMate 2
 
-## Strip Whitespace on specific filetypes
 
-If you want to customize how the bundle works, it's easy.
+## Customization
 
-Say you want to avoid stripping white space on some specific files (like CSV and YAML), just add the following to your `.tm_properties` file:
+Customizing the bundle is easy.
 
-```
+
+### Using `.tm_properties`
+
+Suppose you want to avoid stripping white space on some specific files (like CSV and YAML). Just add the following to your `.tm_properties` file:
+
+```ini
 [*.csv]
 scopeAttributes = attr.keep-whitespace
 
@@ -21,28 +33,33 @@ scopeAttributes = attr.keep-whitespace
 scopeAttributes = attr.keep-whitespace
 ```
 
-If you wanted to preserve whitespace for that messed-up whitespace project of yours, just drop this in its .tm_properties file:
+If you wanted to preserve whitespace for that messed-up whitespace project of yours, just drop this in its `.tm_properties` file:
 
-```
+```ini
 scopeAttributes = attr.keep-whitespace
 ```
 
-Of course, you can combine those two approaches for complete control over whitespace-stripping !
+Of course, you can combine those two approaches for complete control over whitespace-stripping!
 
-If you want to know which scope corresponds to each language, just hit Ctrl + Shift + P ('Show Scope' command) on a document of that type, and you'll get a nice tooltip with the scope namespaces that apply at the current cursor's position.
+If you want to know which scope corresponds to each language, just hit <kbd>^⇧P</kbd> (*Show Scope*) on a document of that type, and you'll get a nice tooltip with the scope namespaces that apply at the current cursor's position.
 
-### Strip without using .tm_properties files
 
-In any case, if you can't (or don't want to) use `.tm_properties` files, you can just open the bundle editor (Bundles menu › Edit Bundles... or pressing Ctrl + Alt + Command + B) and add `-text.tabular.csv` in the Scope Selector field of the command (see attached screenshot : )
+### Without Using `.tm_properties`
+
+If you can't (or don't want to) use `.tm_properties` files, just open the Bundle Editor (**Bundles menu ▶︎ Edit Bundles...** or pressing <kbd>^⌥⌘B</kbd>) and add `-text.tabular.csv` in the command's *Scope Selector* field:
 
 ![screenshot 2013-12-05 20 35 46](https://f.cloud.github.com/assets/3832/1686305/20f9cb7e-5de5-11e3-8b76-1c09d9e40137.png)
 
-If you need to exclude multiple file types, just add `(space)-scope.namespace`. For example, if you want to exclude CSV and YAML, you'd write: `-text.tabular.csv -source.yaml`.
+- **To exclude multiple file types,** just add `(space)-scope.namespace`. 
+  For example, to exclude CSV and YAML, write: `-text.tabular.csv -source.yaml`.
+- **To work _only_ on specific file types,** use the namespace only, without the minus sign (e.g., to strip only CSV files, write `text.tabular.csv`). 
+- **To include multiple file types,** just add them separated by comma (i.e: `text.tabular.csv, source.yaml, text.html.markdown`).
 
-If you want the bundle to work only on specific file types, use the namespace only, without the minus sign (i.e: if you want to strip CSV files only, you'd write `text.tabular.csv`). If you need to include multiple file types just add them separated by comma (i.e: `text.tabular.csv, source.yaml, text.html.markdown`).
 
 ## Notes
 
-**You need to be using at least TextMate version 2.0.0-alpha.9317**. Open Preferences » Software Update and **ALT-click the "Check Now"** button to get the most recent nightly build (this will grab a latest version than the one you get by just clicking the button).
+**You need to be using at least TextMate version 2.0.0-alpha.9317**. 
 
-Enjoy it!
+To get the most recent nightly build, open **Preferences ▶︎ Software Update** and **<kbd>⌥</kbd>-click the "Check Now"** button . This will grab the latest version, rather than the one you get by just clicking the button.
+
+Enjoy!
