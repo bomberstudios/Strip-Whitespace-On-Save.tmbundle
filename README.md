@@ -12,7 +12,7 @@
 
 ## Installation
 
-- Clone the git repo to  `~/Library/Application Support/Avian/Bundles/Strip-Whitespace-On-Save.tmbundle`
+- Clone the git repo to `~/Library/Application\ Support/TextMate/Bundles/Strip-Whitespace-On-Save.tmbundle`
 - Relaunch TextMate 2
 
 
